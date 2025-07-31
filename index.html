@@ -1,0 +1,506 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Directory - From Startup Idea to Execution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .tool-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .tool-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .tool-tagline {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .tool-description {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .tool-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .tool-link {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .tool-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .complexity-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .easy {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .complex {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .filter-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .stats {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tool-footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AI Tools Directory</h1>
+            <p>From Startup Idea to Execution - Your Complete AI Toolkit</p>
+        </div>
+
+        <div class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">25</span>
+                    <span>Total Tools</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span>Easy to Use</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span>Medium Complexity</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span>Advanced Tools</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterTools('all')">All Tools</button>
+                <button class="filter-btn" onclick="filterTools('easy')">Easy</button>
+                <button class="filter-btn" onclick="filterTools('medium')">Medium</button>
+                <button class="filter-btn" onclick="filterTools('complex')">Complex</button>
+            </div>
+        </div>
+
+        <div class="tools-grid" id="toolsGrid">
+            <!-- Tools will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const tools = [
+            {
+                name: "Ideabrowser",
+                tagline: "Community-signal feed of validated startup ideas",
+                description: "Discover and validate startup ideas through community feedback and market signals. Perfect for entrepreneurs looking for their next big idea or wanting to validate existing concepts.",
+                link: "https://ideabrowser.com",
+                complexity: "easy",
+                category: "Ideation"
+            },
+            {
+                name: "Wispflow",
+                tagline: "Voice-to-prompt: speak your idea into existence",
+                description: "Convert your spoken ideas into actionable prompts and structured plans. Great for brainstorming sessions and capturing inspiration on the go.",
+                link: "https://wispflow.com",
+                complexity: "easy",
+                category: "Ideation"
+            },
+            {
+                name: "Claude Code",
+                tagline: "Spawn sub-agents that design, research, write code etc",
+                description: "Advanced AI coding assistant that creates specialized sub-agents for different development tasks. Handles complex software architecture and development workflows.",
+                link: "https://claude.ai",
+                complexity: "complex",
+                category: "Development"
+            },
+            {
+                name: "Bolt / Lovable / Replit",
+                tagline: "Build your prototype rapidly",
+                description: "No-code/low-code platforms for rapid prototyping and web development. Perfect for quickly building and testing your MVP without extensive coding knowledge.",
+                link: "https://bolt.new",
+                complexity: "medium",
+                category: "Development"
+            },
+            {
+                name: "Lindy AI",
+                tagline: "Drag-and-drop AI agent workflows for non-devs",
+                description: "Create sophisticated AI workflows without coding. Build customer service bots, data processors, and automation tools through an intuitive interface.",
+                link: "https://lindy.ai",
+                complexity: "medium",
+                category: "Automation"
+            },
+            {
+                name: "String.dev",
+                tagline: "Type a sentence, ship a workflow (zapier for devs + apps)",
+                description: "Developer-focused automation platform that creates complex workflows from natural language descriptions. Integrates with popular dev tools and APIs.",
+                link: "https://string.dev",
+                complexity: "medium",
+                category: "Development"
+            },
+            {
+                name: "Vapi",
+                tagline: "One-click voice agents for feedback, drive sales etc",
+                description: "Create intelligent voice agents for customer support, sales calls, and feedback collection. Easy integration with existing business processes.",
+                link: "https://vapi.ai",
+                complexity: "medium",
+                category: "Customer Service"
+            },
+            {
+                name: "Cursor",
+                tagline: "AI-first code editor with agents",
+                description: "Next-generation code editor with built-in AI assistance. Features intelligent code completion, debugging help, and architectural suggestions.",
+                link: "https://cursor.sh",
+                complexity: "complex",
+                category: "Development"
+            },
+            {
+                name: "Arcads",
+                tagline: "Ad creative, copy & targeting from a single prompt",
+                description: "Generate complete advertising campaigns including visuals, copy, and targeting strategies from simple text prompts. Perfect for marketing teams and small businesses.",
+                link: "https://arcads.ai",
+                complexity: "easy",
+                category: "Marketing"
+            },
+            {
+                name: "Luma",
+                tagline: "Auto-cuts long video into short launch clips",
+                description: "Transform long-form content into engaging short clips for social media. Automatically identifies key moments and creates shareable content.",
+                link: "https://lumalabs.ai",
+                complexity: "easy",
+                category: "Content"
+            },
+            {
+                name: "Ideabrowser (Starter/Pro)",
+                tagline: "Optimized prompts for LLMs & pinpoints from reddit",
+                description: "Advanced version with premium prompts and Reddit integration for deeper market research and idea validation through social listening.",
+                link: "https://ideabrowser.com/pro",
+                complexity: "medium",
+                category: "Research"
+            },
+            {
+                name: "Code Rabbit",
+                tagline: "Pull-request copilot: reviews, fixes, refactors",
+                description: "AI-powered code review assistant that provides detailed feedback, suggests improvements, and helps maintain code quality across your development team.",
+                link: "https://coderabbit.ai",
+                complexity: "complex",
+                category: "Development"
+            },
+            {
+                name: "Hologram",
+                tagline: "Spin up synthetic users to stress-test product flows",
+                description: "Create virtual users to test your product's user experience, identify bottlenecks, and optimize conversion funnels before real user testing.",
+                link: "https://hologram.io",
+                complexity: "complex",
+                category: "Testing"
+            },
+            {
+                name: "Ampcode",
+                tagline: "Fastest agent CLI",
+                description: "Command-line interface for rapid AI agent deployment and management. Streamlines the development and deployment of AI-powered applications.",
+                link: "https://ampcode.io",
+                complexity: "complex",
+                category: "Development"
+            },
+            {
+                name: "Surfboard",
+                tagline: "AI cohort analysis to spot 'aha' moments on day one",
+                description: "Analyze user behavior patterns to identify key engagement moments and optimize user onboarding for better retention and conversion.",
+                link: "https://surfboard.ai",
+                complexity: "medium",
+                category: "Analytics"
+            },
+            {
+                name: "Productlane",
+                tagline: "Turns feedback threads into prioritized rd roadmaps",
+                description: "Transform customer feedback into actionable product roadmaps. Automatically categorizes, prioritizes, and tracks feature requests and bug reports.",
+                link: "https://productlane.com",
+                complexity: "medium",
+                category: "Product Management"
+            },
+            {
+                name: "Synthflow",
+                tagline: "Realistic voice-overs for demos in seconds",
+                description: "Generate professional-quality voice-overs for product demos, explainer videos, and marketing content using advanced AI voice synthesis.",
+                link: "https://synthflow.ai",
+                complexity: "easy",
+                category: "Content"
+            },
+            {
+                name: "Anima",
+                tagline: "Figma to vibe coding ('on brand vibe coding')",
+                description: "Convert Figma designs into production-ready code while maintaining your brand's visual identity and design system consistency.",
+                link: "https://animaapp.com",
+                complexity: "medium",
+                category: "Design"
+            },
+            {
+                name: "Julius AI",
+                tagline: "AI data analyst to give you business/marketing insights",
+                description: "Analyze business data and generate actionable insights for marketing campaigns, customer behavior, and business performance optimization.",
+                link: "https://julius.ai",
+                complexity: "medium",
+                category: "Analytics"
+            },
+            {
+                name: "Superwall",
+                tagline: "Test paywalls without updating your mobile app",
+                description: "A/B test different paywall designs and pricing strategies in real-time without app store updates. Optimize subscription conversion rates dynamically.",
+                link: "https://superwall.com",
+                complexity: "medium",
+                category: "Monetization"
+            },
+            {
+                name: "Popsy AI",
+                tagline: "Visual AI ads creator",
+                description: "Create stunning visual advertisements using AI. Generate images, layouts, and complete ad creatives optimized for different platforms and audiences.",
+                link: "https://popsy.co",
+                complexity: "easy",
+                category: "Marketing"
+            },
+            {
+                name: "Flux AI",
+                tagline: "Awesome for placing product with AI image (also AI avatars)",
+                description: "Advanced image generation for product placement, marketing materials, and avatar creation. Perfect for e-commerce and social media content.",
+                link: "https://flux.ai",
+                complexity: "easy",
+                category: "Content"
+            },
+            {
+                name: "Gemini",
+                tagline: "Watches video calls, turns gen to get to 10 things",
+                description: "AI meeting assistant that analyzes video calls and extracts key insights, action items, and important decisions automatically.",
+                link: "https://gemini.google.com",
+                complexity: "easy",
+                category: "Productivity"
+            },
+            {
+                name: "Reddit Answers",
+                tagline: "Good content inspo",
+                description: "Mine Reddit for content inspiration, trending topics, and community insights to inform your content strategy and product development.",
+                link: "https://reddit.com",
+                complexity: "easy",
+                category: "Research"
+            },
+            {
+                name: "Runway ML",
+                tagline: "Generate product demo videos from text descriptions",
+                description: "Create professional product demonstration videos using AI. Transform text descriptions into engaging visual content for marketing and sales.",
+                link: "https://runwayml.com",
+                complexity: "medium",
+                category: "Content"
+            },
+            {
+                name: "Gamma AI",
+                tagline: "Use to make lead magnets (presentations still not S tier yet)",
+                description: "Create presentations and lead magnets quickly using AI. Good for generating slide decks and marketing materials, though still improving in quality.",
+                link: "https://gamma.app",
+                complexity: "easy",
+                category: "Marketing"
+            }
+        ];
+
+        function renderTools(toolsToRender = tools) {
+            const toolsGrid = document.getElementById('toolsGrid');
+            toolsGrid.innerHTML = '';
+
+            toolsToRender.forEach(tool => {
+                const toolCard = document.createElement('div');
+                toolCard.className = `tool-card ${tool.complexity}`;
+                toolCard.innerHTML = `
+                    <div class="tool-header">
+                        <div>
+                            <div class="tool-name">${tool.name}</div>
+                            <div class="tool-tagline">${tool.tagline}</div>
+                        </div>
+                    </div>
+                    <div class="tool-description">${tool.description}</div>
+                    <div class="tool-footer">
+                        <a href="${tool.link}" target="_blank" rel="noopener noreferrer" class="tool-link">
+                            Try ${tool.name} →
+                        </a>
+                        <div class="complexity-badge ${tool.complexity}">
+                            ${tool.complexity}
+                        </div>
+                    </div>
+                `;
+                toolsGrid.appendChild(toolCard);
+            });
+        }
+
+        function filterTools(complexity) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (complexity === 'all') {
+                renderTools(tools);
+            } else {
+                const filteredTools = tools.filter(tool => tool.complexity === complexity);
+                renderTools(filteredTools);
+            }
+        }
+
+        // Initial render
+        renderTools();
+    </script>
+</body>
+</html>
